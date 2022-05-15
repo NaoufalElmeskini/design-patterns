@@ -1,4 +1,4 @@
-package behavioral.command.before;
+package behavioral.command;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,8 @@
 package config;
 
-import behavioral.command.before.HomeDashBoard;
-import behavioral.command.before.Room;
+import behavioral.command.HomeDashBoard;
+import behavioral.command.Room;
+import behavioral.command.SwitchLightsCommand;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
 
@@ -10,11 +11,11 @@ public class Config {
 
     @Bean
     public HomeDashBoard homeDashBoard() {
-        return new HomeDashBoard(room());
+        return new HomeDashBoard(room("Main_Room"));
     }
 
     @Bean
-    public Room room() {
-        return new Room();
+    public Room room(String name) {
+        return new Room(name, new SwitchLightsCommand());
     }
 }
